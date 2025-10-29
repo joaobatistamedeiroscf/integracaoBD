@@ -1,10 +1,11 @@
 
 
+import Login from "./pages/Login/Login";
 function App() {
   
   return (
    <div>
-    <h1>Olá Mundo com React e Vite !</h1>
+    <Login />
    </div>
   )
 }
