@@ -1,10 +1,86 @@
 import style from'./Register.module.css' ;
+import { useState } from 'react';
+import type { FormEvent } from 'react';
+
 function Register(){
-    return(
-        <div className={style.Register}>
-            Register Page
+    
+    const [name , setName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [date, setDate] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [confirmPassword, setConfirmPassword] = useState<string>("");
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    console.log("Nome: " , name);
+    console.log("Data de Nascimento: " , date);
+    console.log("Email: " , email);
+    console.log("Senha: ", password);
+    console.log("Confirmação de Senha: ", confirmPassword);
+  }
+
+  return (
+    
+    <div className={style.wrapper}>
+      
+      <form onSubmit={handleSubmit}>
+        
+        <h1>Cadastro de Usuário</h1>
+        
+        <div className={style.inputBox}>
+            <label htmlFor="">Nome Completo:</label>
+          <input
+            type="text"
+            placeholder="Digite seu nome completo:"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
-    )
+
+        <div className={style.inputBox}>
+            <label>Email:</label>
+          <input
+            type="email"
+            placeholder="Digite seu email:"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+
+        <div className={style.inputBox}>
+            <label>Data de Nascimento:</label>
+          <input
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
+        </div>
+        
+        <div className={style.inputBox}>
+            <label>Senha:</label>
+          <input
+            type="password"
+            placeholder="Senha"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        
+        <div className={style.inputBox}>
+            <label>Confirmação de Senha:</label>
+          <input
+            type="password"
+            placeholder="Confirme sua senha"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+        </div>
+
+        <button type="submit">Cadastrar</button>
+
+      </form>
+    </div>
+  );
 }
 
-export default Register ; 
+export default Register ;
