@@ -1,6 +1,8 @@
 import style from'./Forget.module.css' ;
 import { useState } from 'react';
 import type { FormEvent } from 'react';
+import { FaUser } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
 
 function Forget(){
     const [email, setEmail] = useState<string>("");
@@ -26,6 +28,7 @@ function Forget(){
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+            <FaUser />
         </div>
 
         <div className={style.inputBox}>
@@ -35,6 +38,7 @@ function Forget(){
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+            <FaLock />
         </div>
 
         <button type="submit">Enviar</button>

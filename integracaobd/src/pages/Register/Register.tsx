@@ -1,6 +1,11 @@
 import style from'./Register.module.css' ;
 import { useState } from 'react';
 import type { FormEvent } from 'react';
+import { FaUser } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+
+
 
 function Register(){
     
@@ -35,6 +40,7 @@ function Register(){
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+          <FaUser />
         </div>
 
         <div className={style.inputBox}>
@@ -45,6 +51,7 @@ function Register(){
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+          <MdEmail />
         </div>
 
         <div className={style.inputBox}>
@@ -64,6 +71,7 @@ function Register(){
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <FaLock />
         </div>
         
         <div className={style.inputBox}>
@@ -74,6 +82,7 @@ function Register(){
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
+          <FaLock />
         </div>
 
         <button type="submit">Cadastrar</button>

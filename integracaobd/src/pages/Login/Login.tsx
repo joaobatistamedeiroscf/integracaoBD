@@ -2,7 +2,8 @@ import style from "./Login.module.css";
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { Link } from "react-router-dom";
-
+import { FaUser } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
 
 
 function Login() {
@@ -19,6 +20,7 @@ function Login() {
     <div className={style.wrapper}>
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
+        
         <div className={style.inputBox}>
           <input
             type="email"
@@ -26,7 +28,9 @@ function Login() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+          <FaUser />
         </div>
+        
         <div className={style.inputBox}>
           <input
             type="password"
@@ -34,6 +38,8 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <FaLock />
+          
         </div>
         <div className={style.forget}>
           <Link to="/forget">Esqueceu a senha?</Link>
