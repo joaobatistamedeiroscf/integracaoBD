@@ -4,6 +4,7 @@ import type { FormEvent } from 'react';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { IoCalendar } from "react-icons/io5";
 
 
 
@@ -61,6 +62,7 @@ function Register(){
             value={date}
             onChange={(e) => setDate(e.target.value)}
           />
+          <IoCalendar className={style.icon} />
         </div>
         
         <div className={style.inputBox}>
