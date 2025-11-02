@@ -18,8 +18,8 @@ function Login() {
 
   return (
     <div className={style.wrapper}>
-      <form onSubmit={handleSubmit}>
-        <h1>Login</h1>
+      <form  className={style.form} onSubmit={handleSubmit}>
+        <h1 className={style.title}>Login</h1>
         
         <div className={style.inputBox}>
           <input
@@ -28,7 +28,7 @@ function Login() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <FaUser />
+          <FaUser className={style.icon} />
         </div>
         
         <div className={style.inputBox}>
@@ -38,20 +38,20 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <FaLock />
+          <FaLock className={style.icon} />
           
         </div>
         <div className={style.forget}>
-          <Link to="/forget">Esqueceu a senha?</Link>
+          <Link  className={style.link} to="/forget">Esqueceu a senha?</Link>
         </div>
 
-        <button type="submit">Entrar</button>
+        <button className={style.button} type="submit">Entrar</button>
 
       
         
         <div className={style.register}>
           <p>
-            Não tem uma conta? <Link to="/register">Cadastre-se</Link>
+            Não tem uma conta? <Link className={style.link} to="/register">Cadastre-se</Link>
           </p>
         </div>
       </form>

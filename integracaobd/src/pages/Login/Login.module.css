@@ -1,0 +1,151 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins' ,  sans-serif;
+    background: url('./src/assets/loginbackgrounddarkmode.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.form {
+    border: 1px solid #636CCB;
+    border-radius: 40px;
+    width: 400px;
+    height: auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+}
+
+.title{
+    color: #F5F5F0;
+    margin-bottom: 15px;
+    font-size: 32px;
+}
+
+.inputBox{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+
+
+}
+
+.inputBox input {
+    border: 1px solid #4A70A9;
+    border-radius: 40px;
+    background: transparent;
+    color: #EAEAEA;
+    width: 100%;
+    padding:  10px 20px 10px;;
+    outline: none;
+    
+
+}
+.inputBox input::placeholder{
+    color: #EAEAEA;
+}
+
+.inputBox .icon{
+    position: relative;
+    top:-45%;
+    left: 90%;
+    transform: translateY(-50%);
+    color: #EAEAEA;
+}
+
+.forget {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.forget .link {
+    position: absolute;
+    color: #EAEAEA;
+    text-decoration: none;
+    transform: translateY(-50%);
+    left:8px;
+    font-size: 15px;
+    color: #7A5CFF;
+    font-size: 15px;
+}
+.forget .link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 0;
+    bottom: -2px;
+    height: 2px;
+    background: #7A5CFF;
+    transition: width 0.3s ease;
+}
+.forget .link:hover::after {
+    width: 100%;
+}
+
+.forget .link:hover {
+    color: #A48FFF;
+}
+
+.button {
+    width: 50%;
+    padding: 10px;
+    background-color: #4B5DFF;
+    color: #FFFFFF;
+    border: 2px solid #636CCB;
+    border-radius: 40px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.button:hover {
+    background: rgba(75,93,255,0.5);
+    transform: translateY(-2%);
+
+}
+
+.register {
+    color: #EAEAEA;
+    
+}
+
+.register p {
+    font-size: 15px;
+}
+
+.register .link {
+    text-decoration: none;
+    color:#7A5CFF ;
+    font-size: 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.register .link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 0;
+    bottom: -2px;
+    height: 2px;
+    background: #7A5CFF;
+    transition: width 0.3s ease;
+}
+
+.register .link:hover::after {
+    width: 100%;
+}
+
+.register .link:hover {
+    color: #A48FFF;
+}
+
