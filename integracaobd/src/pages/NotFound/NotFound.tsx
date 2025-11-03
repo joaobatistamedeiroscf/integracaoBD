@@ -5,7 +5,7 @@ function NotFound(){
     return(
         <div className = {style.wrapper}>
             <div className={style.container}>
-                 <h1 className = {style.title}>Ops... Página não encontrada!​</h1>
+                 <h1 className = {style.title}>Ops... Página não encontrada! Error 404​</h1>
                  <TiAnchor className = {style.icon} />
             </div>
            
