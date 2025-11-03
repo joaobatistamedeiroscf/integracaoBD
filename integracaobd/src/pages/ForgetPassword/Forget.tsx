@@ -4,6 +4,8 @@ import type { FormEvent } from 'react';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import Button from '../../components/Button.tsx';
+import { GoArrowLeft } from "react-icons/go";
+import { Link } from 'react-router-dom';
 
 function Forget(){
     const [email, setEmail] = useState<string>("");
@@ -19,6 +21,11 @@ function Forget(){
     <div className={style.wrapper}>
 
       <form onSubmit={handleSubmit} className= {style.form}>
+        
+        <div className={style.containerReturn}>
+          <GoArrowLeft className={style.iconReturn} />
+          <Link className={style.linkReturn} to="/">Voltar</Link>
+        </div>
         
         <h1 className = {style.title }>Recuperar Senha</h1>
         
