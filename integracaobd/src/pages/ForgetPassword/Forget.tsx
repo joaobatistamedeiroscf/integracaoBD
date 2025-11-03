@@ -3,6 +3,7 @@ import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
+import Button from '../../components/Button.tsx';
 
 function Forget(){
     const [email, setEmail] = useState<string>("");
@@ -40,8 +41,8 @@ function Forget(){
           />
             <FaLock className={style.icon} />
         </div>
-
-        <button className = {style.button} type="submit">Enviar</button>
+        
+        <Button className= {style.button} text="Enviar" />
         
         </form>
     </div>

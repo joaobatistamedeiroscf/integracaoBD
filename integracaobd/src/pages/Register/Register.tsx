@@ -5,6 +5,7 @@ import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoCalendar } from "react-icons/io5";
+import Button from '../../components/Button.tsx';
 
 
 
@@ -87,7 +88,7 @@ function Register(){
           <FaLock  className={style.icon} />
         </div>
 
-        <button  className = {style.button}type="submit">Cadastrar</button>
+    <Button className= {style.button} text="Cadastrar" />
 
       </form>
     </div>

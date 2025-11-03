@@ -4,6 +4,7 @@ import type { FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
+import Button from "../../components/Button.tsx";
 
 
 function Login() {
@@ -45,8 +46,7 @@ function Login() {
           <Link  className={style.link} to="/forget">Esqueceu a senha?</Link>
         </div>
 
-        <button className={style.button} type="submit">Entrar</button>
-
+        <Button className= {style.button} text="Entrar" />
       
         
         <div className={style.register}>
