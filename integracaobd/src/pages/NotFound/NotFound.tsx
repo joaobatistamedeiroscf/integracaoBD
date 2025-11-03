@@ -4,8 +4,12 @@ import { TiAnchor } from "react-icons/ti";
 function NotFound(){
     return(
         <div className = {style.wrapper}>
-            <h1 className = {style.title}>Ops... Página não encontrada!​</h1>
-            <TiAnchor />
+            <div className={style.container}>
+                 <h1 className = {style.title}>Ops... Página não encontrada!​</h1>
+                 <TiAnchor className = {style.icon} />
+            </div>
+           
+            
         </div>
     )
 
