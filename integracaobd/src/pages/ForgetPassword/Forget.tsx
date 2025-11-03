@@ -17,9 +17,9 @@ function Forget(){
   return (
     <div className={style.wrapper}>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className= {style.form}>
         
-        <h1>Recuperar Senha</h1>
+        <h1 className = {style.title }>Recuperar Senha</h1>
         
         <div className={style.inputBox}>
           <input
@@ -28,7 +28,7 @@ function Forget(){
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-            <FaUser />
+              <FaUser className={style.icon} />
         </div>
 
         <div className={style.inputBox}>
@@ -38,10 +38,10 @@ function Forget(){
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-            <FaLock />
+            <FaLock className={style.icon} />
         </div>
 
-        <button type="submit">Enviar</button>
+        <button className = {style.button} type="submit">Enviar</button>
         
         </form>
     </div>

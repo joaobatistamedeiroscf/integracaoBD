@@ -1,0 +1,78 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins' ,  sans-serif;
+    background: url('./src/assets/forgetpasswordbackgrounddarkmode.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.form {
+    border: 1px solid #78B9B5;
+    border-radius: 40px;
+    width: 400px;
+    height: auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+}
+
+.title {
+    margin-bottom: 15px ; 
+    font-size: 32px ; 
+    color:  #F5F5F0;  
+}
+
+.inputBox {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputBox input {
+    border: 1px solid #0F828C;
+    border-radius: 40px;
+    background: transparent;
+    color: #EAEAEA;
+    width: 100%;
+    padding: 10px 20px 10px;
+    outline: none;
+}
+
+.inputBox input::placeholder{
+    color:#F5F5F0 ; 
+}
+
+.inputBox .icon {
+    color:#F5F5F0 ;
+    position: relative;
+    top: -20px;
+    left: 90%;
+    transform: translateY(-50%); 
+}
+
+.button {
+    width: 50%;
+    padding: 10px;
+    background-color: #54C392;
+    color: #FFFFFF;
+    border: 2px solid #73EC8B;
+    border-radius: 40px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.button:hover {
+    background-color: #73EC8B;
+    transform: translateY(-2px);
+}
+
+
+
+
