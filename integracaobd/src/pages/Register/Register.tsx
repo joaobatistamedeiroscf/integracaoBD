@@ -6,8 +6,7 @@ import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoCalendar } from "react-icons/io5";
 import Button from '../../components/Button.tsx';
-import { GoArrowLeft } from "react-icons/go";
-import { Link } from 'react-router-dom';
+import LinkReturn from '../../components/LinkReturn.tsx';
 
 
 
@@ -34,13 +33,10 @@ function Register(){
     <div className={style.wrapper}>
 
       <form onSubmit={handleSubmit} className={style.form}>
-
-        <div className={style.containerReturn}>
-          <GoArrowLeft className={style.iconReturn} />
-          <Link className={style.linkReturn} to="/">Voltar</Link>
-        </div>
-
-        <h1 className= {style.title}>Cadastro</h1>
+         
+          <LinkReturn className={style.linkReturn} />
+          
+          <h1 className= {style.title}>Cadastro</h1>
         
         <div className={style.inputBox}>
             <label htmlFor="">Nome Completo:</label>
