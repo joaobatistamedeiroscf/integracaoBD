@@ -3,6 +3,8 @@ import Register from "./pages/Register/Register";
 import Forget from "./pages/ForgetPassword/Forget";
 import NotFound from "./pages/NotFound/NotFound";
 import { Routes,Route } from "react-router-dom";
+import Biblioteca from "./pages/Biblioteca/Biblioteca";
+
 
 function App() {
   
@@ -13,6 +15,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/forget" element={<Forget />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/biblioteca" element={<Biblioteca />} />
       </Routes>
 
     </div>

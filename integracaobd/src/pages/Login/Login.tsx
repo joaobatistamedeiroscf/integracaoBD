@@ -12,6 +12,7 @@ function Login() {
   const [password, setPassword] = useState<string>("");
   const [mensageEmail, setMensageEmail] = useState<string>("");
   const [mensagePassword, setMensagePassword] = useState<string>("");
+  
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -61,8 +62,7 @@ function Login() {
         </div>
 
         <Button className= {style.button} text="Entrar"  />
-      
-        
+
         <div className={style.register}>
           <p>
             Não tem uma conta? <Link className={style.link} to="/register">Cadastre-se</Link>
