@@ -1,7 +1,7 @@
 import style from "./Login.module.css";
 import { useState } from "react";
 import type { FormEvent } from "react";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import Button from "../../components/Button.tsx";
@@ -13,11 +13,16 @@ function Login() {
   const [mensageEmail, setMensageEmail] = useState<string>("");
   const [mensagePassword, setMensagePassword] = useState<string>("");
   
-
+  const navigate = useNavigate();
+  
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    
     console.log("Email: " , email);
     console.log("Password: ", password);
+
+    setMensageEmail("");
+    setMensagePassword("");
 
     if(email === "" ){
       setMensageEmail("Por favor, preencha  o campo Email.");
@@ -25,6 +30,11 @@ function Login() {
     if(password === ""){
       setMensagePassword("Por favor, preencha o campo Senha.");
     }
+
+    if (email !== "" && password !== "") {
+      navigate("/biblioteca");
+    }
+
 
   }
 
