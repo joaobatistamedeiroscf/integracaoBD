@@ -1,55 +1,50 @@
-import style from'./Forget.module.css' ;
+import style from './Forget.module.css';
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { FaUser } from "react-icons/fa";
-import { FaLock } from "react-icons/fa";
 import Button from '../../components/Button.tsx';
 import LinkReturn from '../../components/LinkReturn.tsx';
+import { supabase } from '../../lib/supabaseCliente.ts';
 
+function Forget() {
+  const [email, setEmail] = useState<string>("");
 
-function Forget(){
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
-
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log("Email: " , email);
-    console.log("Nova senha: ", password);
+
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: "http://localhost:5173/update-password" // ajuste para sua rota real
+    });
+
+    if (error) {
+      alert("Erro ao enviar e-mail: " + error.message);
+      return;
+    }
+
+    alert("Um link de recuperação de senha foi enviado para o seu e-mail.");
+    setEmail("");
   }
 
   return (
     <div className={style.wrapper}>
-
-      <form onSubmit={handleSubmit} className= {style.form}>
-        
+      <form onSubmit={handleSubmit} className={style.form}>
         <LinkReturn className={style.linkReturn} />
-        
-        <h1 className = {style.title }>Recuperar Senha</h1>
-        
+        <h1 className={style.title}>Recuperar Senha</h1>
+
         <div className={style.inputBox}>
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Digite seu email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-              <FaUser className={style.icon} />
+          <FaUser className={style.icon} />
         </div>
 
-        <div className={style.inputBox}>
-          <input
-            type="password"
-            placeholder="Digite a nova senha"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-            <FaLock className={style.icon} />
-        </div>
-        
-        <Button className= {style.button} text="Enviar" />
-        
-        </form>
+        <Button className={style.button} text="Enviar" />
+      </form>
     </div>
   );
 }
-export default Forget ; 
+
+export default Forget;

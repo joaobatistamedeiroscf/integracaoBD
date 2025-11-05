@@ -1,48 +1,74 @@
-import style from'./Register.module.css' ;
+import style from './Register.module.css';
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { FaUser } from "react-icons/fa";
-import { FaLock } from "react-icons/fa";
+import { FaUser, FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoCalendar } from "react-icons/io5";
 import Button from '../../components/Button.tsx';
 import LinkReturn from '../../components/LinkReturn.tsx';
+import { supabase } from '../../lib/supabaseCliente.ts';
 
+function Register() {
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [date, setDate] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
 
-
-
-function Register(){
-    
-    const [name , setName] = useState<string>("");
-    const [email, setEmail] = useState<string>("");
-    const [date, setDate] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
-    const [confirmPassword, setConfirmPassword] = useState<string>("");
-
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log("Nome: " , name);
-    console.log("Data de Nascimento: " , date);
-    console.log("Email: " , email);
-    console.log("Senha: ", password);
-    console.log("Confirmação de Senha: ", confirmPassword);
+
+    if (password !== confirmPassword) {
+      alert("As senhas não coincidem!");
+      return;
+    }
+
+    // Cria o usuário no Supabase
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    // Cria o registro do perfil
+    if (data.user) {
+      const { error: profileError } = await supabase.from("profiles").insert([
+        {
+          id: data.user.id,
+          name,
+          birth_date: date,
+        },
+      ]);
+
+      if (profileError) {
+        alert("Erro ao salvar o perfil: " + profileError.message);
+        return;
+      }
+    }
+
+    alert("Cadastro realizado com sucesso! Verifique seu e-mail para confirmar a conta.");
+    setName("");
+    setEmail("");
+    setDate("");
+    setPassword("");
+    setConfirmPassword("");
   }
 
   return (
-    
     <div className={style.wrapper}>
-
       <form onSubmit={handleSubmit} className={style.form}>
-         
-          <LinkReturn className={style.linkReturn} />
-          
-          <h1 className= {style.title}>Cadastro</h1>
-        
+        <LinkReturn className={style.linkReturn} />
+        <h1 className={style.title}>Cadastro</h1>
+
         <div className={style.inputBox}>
-            <label htmlFor="">Nome Completo:</label>
+          <label>Nome Completo:</label>
           <input
             type="text"
-            placeholder="Digite seu nome completo:"
+            placeholder="Digite seu nome completo"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -50,10 +76,10 @@ function Register(){
         </div>
 
         <div className={style.inputBox}>
-            <label>Email:</label>
+          <label>Email:</label>
           <input
             type="email"
-            placeholder="Digite seu email:"
+            placeholder="Digite seu email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -61,7 +87,7 @@ function Register(){
         </div>
 
         <div className={style.inputBox}>
-            <label>Data de Nascimento:</label>
+          <label>Data de Nascimento:</label>
           <input
             type="date"
             value={date}
@@ -69,9 +95,9 @@ function Register(){
           />
           <IoCalendar className={style.icon} />
         </div>
-        
+
         <div className={style.inputBox}>
-            <label>Senha:</label>
+          <label>Senha:</label>
           <input
             type="password"
             placeholder="Senha"
@@ -80,23 +106,22 @@ function Register(){
           />
           <FaLock className={style.icon} />
         </div>
-        
+
         <div className={style.inputBox}>
-            <label>Confirmação de Senha:</label>
+          <label>Confirmação de Senha:</label>
           <input
             type="password"
             placeholder="Confirme sua senha"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
-          <FaLock  className={style.icon} />
+          <FaLock className={style.icon} />
         </div>
 
-    <Button className= {style.button} text="Cadastrar" />
-
+        <Button className={style.button} text="Cadastrar" />
       </form>
     </div>
   );
 }
 
-export default Register ;
+export default Register;
