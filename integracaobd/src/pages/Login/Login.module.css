@@ -61,6 +61,7 @@
 .forget {
     position: relative;
     width: 100%;
+    margin-top: 8px;
     margin-bottom: 25px;
 }
 
@@ -69,7 +70,7 @@
     color: #EAEAEA;
     text-decoration: none;
     transform: translateY(-50%);
-    left:8px;
+    left:18px;
     font-size: 15px;
     color: #7A5CFF;
     font-size: 15px;
@@ -147,3 +148,10 @@
     color: #A48FFF;
 }
 
+.mensagerror {
+    font-size: 15px;
+    color: #D71313;
+    position: relative;
+    transform: translateY(-60%);
+    right: 10px;
+}

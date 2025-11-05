@@ -10,11 +10,21 @@ import Button from "../../components/Button.tsx";
 function Login() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [mensageEmail, setMensageEmail] = useState<string>("");
+  const [mensagePassword, setMensagePassword] = useState<string>("");
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     console.log("Email: " , email);
     console.log("Password: ", password);
+
+    if(email === "" ){
+      setMensageEmail("Por favor, preencha  o campo Email.");
+    }
+    if(password === ""){
+      setMensagePassword("Por favor, preencha o campo Senha.");
+    }
+
   }
 
   return (
@@ -31,7 +41,9 @@ function Login() {
           />
           <FaUser className={style.icon} />
         </div>
-        
+
+        {mensageEmail && <p className={style.mensagerror}>{mensageEmail}</p>}
+
         <div className={style.inputBox}>
           <input
             type="password"
@@ -40,13 +52,15 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
           <FaLock className={style.icon} />
-          
-        </div>
+          </div>
+
+          {mensagePassword && <p className={style.mensagerror}>{mensagePassword}</p>}
+
         <div className={style.forget}>
           <Link  className={style.link} to="/forget">Esqueceu a senha?</Link>
         </div>
 
-        <Button className= {style.button} text="Entrar" />
+        <Button className= {style.button} text="Entrar"  />
       
         
         <div className={style.register}>
