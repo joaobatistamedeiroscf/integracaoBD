@@ -1,27 +1,42 @@
-import style from './Forget.module.css';
-import { useState } from 'react';
-import type { FormEvent } from 'react';
+import style from "./Forget.module.css";
+import { useState } from "react";
+import type { FormEvent } from "react";
 import { FaUser } from "react-icons/fa";
-import Button from '../../components/Button.tsx';
-import LinkReturn from '../../components/LinkReturn.tsx';
-import { supabase } from '../../lib/supabaseCliente.ts';
+import Button from "../../components/Button.tsx";
+import LinkReturn from "../../components/LinkReturn.tsx";
+import { supabase } from "../../lib/supabaseCliente.ts";
+import { validateEmail } from "../../lib/validateEmail";
 
 function Forget() {
   const [email, setEmail] = useState<string>("");
+  const [mensageEmail, setMensageEmail] = useState<string>("");
+  const [successMessage, setSuccessMessage] = useState<string>("");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    // limpar mensagens
+    setMensageEmail("");
+    setSuccessMessage("");
 
-    const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: "http://localhost:5173/update-password" // ajuste para sua rota real
-    });
-
-    if (error) {
-      alert("Erro ao enviar e-mail: " + error.message);
+    const emailErr = validateEmail(email);
+    if (emailErr) {
+      setMensageEmail(emailErr);
       return;
     }
 
-    alert("Um link de recuperação de senha foi enviado para o seu e-mail.");
+    const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+      redirectTo: "http://localhost:5173/update-password", // ajuste para sua rota real
+    });
+
+    if (error) {
+      setSuccessMessage("");
+      setMensageEmail("Erro ao enviar e-mail: " + error.message);
+      return;
+    }
+
+    setSuccessMessage(
+      "Um link de recuperação de senha foi enviado para o seu e-mail."
+    );
     setEmail("");
   }
 
@@ -36,10 +51,22 @@ function Forget() {
             type="email"
             placeholder="Digite seu email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setMensageEmail("");
+              setSuccessMessage("");
+            }}
           />
           <FaUser className={style.icon} />
         </div>
+
+        {mensageEmail && (
+          <p className={style.mensagerrorEmail}>{mensageEmail}</p>
+        )}
+
+        {successMessage && (
+          <p className={style.mensagsuccess}>{successMessage}</p>
+        )}
 
         <Button className={style.button} text="Enviar" />
       </form>
