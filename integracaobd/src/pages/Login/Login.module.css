@@ -1,170 +1,330 @@
 .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-family: 'Poppins' ,  sans-serif;
-    background: url('./src/assets/loginbackgrounddarkmode.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: url("./src/assets/loginbackgrounddarkmode.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .form {
-    border: 1px solid #636CCB;
-    border-radius: 40px;
-    width: 400px;
-    height: auto;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: transparent;
+  border: 1px solid #636ccb;
+  border-radius: 40px;
+  width: 400px;
+  height: auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
 }
 
-.title{
-    color: #F5F5F0;
-    margin-bottom: 10px;
-    font-size: 32px;
+.title {
+  color: #f5f5f0;
+  margin-bottom: 10px;
+  font-size: 32px;
 }
 
-.inputBox{
-    position: relative;
-    width: 100%;
-    height: 50px;
-    margin-top: 15px;
-    /*aqui o bug */
+.inputBox {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-top: 15px;
+  /*aqui o bug */
 }
 
 .inputBox input {
-    border: 1px solid #4A70A9;
-    border-radius: 40px;
-    background: transparent;
-    color: #EAEAEA;
-    width: 100%;
-    padding:  10px 20px 10px;;
-    outline: none;
-    
-
+  border: 1px solid #4a70a9;
+  border-radius: 40px;
+  background: transparent;
+  color: #eaeaea;
+  width: 100%;
+  padding: 10px 20px 10px;
+  outline: none;
 }
-.inputBox input::placeholder{
-    color: #EAEAEA;
+.inputBox input::placeholder {
+  color: #eaeaea;
 }
 
-.inputBox .icon{
-    position: relative;
-    top:-45%;
-    left: 90%;
-    transform: translateY(-50%);
-    color: #EAEAEA;
+.inputBox .icon {
+  position: relative;
+  top: -45%;
+  left: 90%;
+  transform: translateY(-50%);
+  color: #eaeaea;
 }
 
 .forget {
-    position: relative;
-    width: 100%;
-    margin-top: 8px;
-    margin-bottom: 25px;
+  position: relative;
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 25px;
 }
 
 .forget .link {
-    position: absolute;
-    color: #EAEAEA;
-    text-decoration: none;
-    transform: translateY(-50%);
-    left:18px;
-    font-size: 15px;
-    color: #7A5CFF;
-    font-size: 15px;
+  position: absolute;
+  color: #eaeaea;
+  text-decoration: none;
+  transform: translateY(-50%);
+  left: 18px;
+  font-size: 15px;
+  color: #7a5cff;
+  font-size: 15px;
 }
 .forget .link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 0;
-    bottom: -2px;
-    height: 2px;
-    background: #7A5CFF;
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 0;
+  bottom: -2px;
+  height: 2px;
+  background: #7a5cff;
+  transition: width 0.3s ease;
 }
 .forget .link:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .forget .link:hover {
-    color: #A48FFF;
+  color: #a48fff;
 }
 
 .button {
-    width: 50%;
-    padding: 10px;
-    background-color: #4B5DFF;
-    color: #FFFFFF;
-    border: 2px solid #636CCB;
-    border-radius: 40px;
-    margin-bottom: 15px;
-    font-size: 14px;
+  width: 50%;
+  padding: 10px;
+  background-color: #4b5dff;
+  color: #ffffff;
+  border: 2px solid #636ccb;
+  border-radius: 40px;
+  margin-bottom: 15px;
+  font-size: 14px;
 }
 
 .button:hover {
-    background: rgba(75,93,255,0.5);
-    transform: translateY(-2%);
-
+  background: rgba(75, 93, 255, 0.5);
+  transform: translateY(-2%);
 }
 
 .register {
-    color: #EAEAEA;
-    
+  color: #eaeaea;
 }
 
 .register p {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .register .link {
-    text-decoration: none;
-    color:#7A5CFF ;
-    font-size: 15px;
-    position: relative;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #7a5cff;
+  font-size: 15px;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
 .register .link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 0;
-    bottom: -2px;
-    height: 2px;
-    background: #7A5CFF;
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 0;
+  bottom: -2px;
+  height: 2px;
+  background: #7a5cff;
+  transition: width 0.3s ease;
 }
 
 .register .link:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .register .link:hover {
-    color: #A48FFF;
+  color: #a48fff;
 }
 
 .mensagerrorEmail,
 .mensagerrorPassword {
-    font-size: 14px;
-    color: #D71313;
-    margin: 0px 0 0 20px; 
-    width: calc(100% - 40px); 
-    text-align: left;
-    word-wrap: break-word;
+  font-size: 14px;
+  color: #d71313;
+  margin: 0px 0 0 20px;
+  width: calc(100% - 40px);
+  text-align: left;
+  word-wrap: break-word;
 }
 
 .mensagsuccess {
+  font-size: 14px;
+  color: #2ecc71;
+  margin: 8px 0 12px 0;
+  width: calc(100% - 40px);
+  margin-left: 20px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+/* Responsividade para tablets e telas maiores */
+@media (max-width: 768px) {
+  .form {
+    width: 85%;
+    max-width: 400px;
+    padding: 30px 25px;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .inputBox {
+    height: 45px;
+    margin-top: 12px;
+  }
+
+  .inputBox input {
     font-size: 14px;
-    color: #2ecc71;
-    margin: 8px 0 12px 0;
-    width: calc(100% - 40px);
-    margin-left: 20px;
-    text-align: left;
-    word-wrap: break-word;
+    padding: 8px 15px 8px;
+  }
+
+  .button {
+    width: 55%;
+    padding: 8px;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .register p,
+  .forget .link {
+    font-size: 13px;
+  }
+}
+
+/* Responsividade para celulares pequenos */
+@media (max-width: 480px) {
+  .wrapper {
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .form {
+    width: 100%;
+    max-width: 350px;
+    padding: 25px 15px;
+    border-radius: 25px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .inputBox {
+    height: 42px;
+    margin-top: 10px;
+  }
+
+  .inputBox input {
+    font-size: 13px;
+    padding: 7px 12px 7px;
+    border-radius: 30px;
+  }
+
+  .inputBox input::placeholder {
+    font-size: 12px;
+  }
+
+  .inputBox .icon {
+    font-size: 18px;
+    left: 88%;
+  }
+
+  .forget {
+    margin-top: 6px;
+    margin-bottom: 18px;
+  }
+
+  .forget .link {
+    font-size: 12px;
+    left: 12px;
+  }
+
+  .button {
+    width: 60%;
+    padding: 7px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+
+  .register {
+    width: 100%;
+    text-align: center;
+  }
+
+  .register p {
+    font-size: 12px;
+    margin: 8px 0;
+  }
+
+  .register .link {
+    font-size: 12px;
+  }
+
+  .mensagerrorEmail,
+  .mensagerrorPassword {
+    font-size: 12px;
+    margin: 4px 0 0 15px;
+    width: calc(100% - 30px);
+  }
+
+  .mensagsuccess {
+    font-size: 12px;
+    margin: 6px 0 8px 0;
+    width: calc(100% - 30px);
+    margin-left: 15px;
+  }
+}
+
+/* Responsividade para celulares muito pequenos */
+@media (max-width: 360px) {
+  .form {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 12px;
+    border-radius: 20px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .inputBox {
+    height: 40px;
+    margin-top: 8px;
+  }
+
+  .inputBox input {
+    font-size: 12px;
+    padding: 6px 10px 6px;
+  }
+
+  .button {
+    width: 70%;
+    padding: 6px;
+    font-size: 11px;
+  }
+
+  .register p,
+  .forget .link {
+    font-size: 11px;
+  }
+
+  .mensagerrorEmail,
+  .mensagerrorPassword,
+  .mensagsuccess {
+    font-size: 11px;
+  }
 }
