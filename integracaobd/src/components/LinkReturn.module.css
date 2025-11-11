@@ -19,3 +19,33 @@
     top: -18px;
     transition: color 0.3s ease;
 }
+
+@media (max-width: 600px) {
+    .linkReturn{
+        font-size: 13px;
+        top: -20px;
+}
+    .iconReturn {
+        font-size: 13px;
+
+    }
+
+}
+
+@media (max-width: 380px) {
+    .containerReturn {
+        display: flex;
+        position: relative;
+        right: -17px;
+    }
+    .linkReturn{
+        font-size: 12px;
+        top: -20px;
+}
+    .iconReturn {
+        font-size: 12px;
+
+    }
+    
+}
+
