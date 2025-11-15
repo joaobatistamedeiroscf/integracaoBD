@@ -60,6 +60,7 @@
 
 .iconButton {
   position: relative;
+  outline: none;
   top: -40%;
   left: 86%;
   transform: translateY(-5%);
