@@ -1,0 +1,386 @@
+{
+  "books": {
+    "javascript": [
+      {
+        "id": 1,
+        "title": "JavaScript: The Good Parts",
+        "author": "Douglas Crockford",
+        "year": 2008,
+        "isbn": "9780596517748",
+        "pages": 176,
+        "description": "Um clássico que destaca e explica as melhores partes da linguagem JavaScript, ajudando desenvolvedores a escrever código mais limpo e eficaz.",
+        "price": 90.00,
+        "quantity": 7,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780596517748-L.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Eloquent JavaScript",
+        "author": "Marijn Haverbeke",
+        "year": 2018,
+        "isbn": "9781593279509",
+        "pages": 472,
+        "description": "Um guia moderno e profundo para programadores que desejam dominar JavaScript, desde conceitos fundamentais até técnicas avançadas.",
+        "price": 85.00,
+        "quantity": 8,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9781593279509-L.jpg"
+      },
+      {
+        "id": 3,
+        "title": "You Don't Know JS Yet: Scope & Closures",
+        "author": "Kyle Simpson",
+        "year": 2020,
+        "isbn": "9781098117690",
+        "pages": 143,
+        "description": "Explica de forma profunda como funcionam escopo, closures e o modelo mental interno da linguagem JavaScript.",
+        "price": 75.00,
+        "quantity": 10,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9781098117690-L.jpg"
+      }
+    ],
+    "python": [
+      {
+        "id": 4,
+        "title": "Python Crash Course",
+        "author": "Eric Matthes",
+        "year": 2019,
+        "isbn": "9781593279288",
+        "pages": 544,
+        "description": "Um dos livros mais famosos para aprender Python com projetos práticos, cobrindo fundamentos e construção de aplicações.",
+        "price": 110.00,
+        "quantity": 12,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9781593279288-L.jpg"
+      },
+      {
+        "id": 5,
+        "title": "Fluent Python",
+        "author": "Luciano Ramalho",
+        "year": 2015,
+        "isbn": "9781491946005",
+        "pages": 792,
+        "description": "Obra completa para desenvolvedores Python que buscam escrever código idiomático e altamente eficiente.",
+        "price": 170.00,
+        "quantity": 4,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9781491946005-L.jpg"
+      },
+      {
+        "id": 6,
+        "title": "Automate the Boring Stuff with Python",
+        "author": "Al Sweigart",
+        "year": 2015,
+        "isbn": "9781593275990",
+        "pages": 504,
+        "description": "Mostra como automatizar tarefas do dia a dia usando Python, ideal para iniciantes e usuários práticos.",
+        "price": 95.00,
+        "quantity": 5,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9781593275990-L.jpg"
+      }
+    ],
+    "java": [
+      {
+        "id": 7,
+        "title": "Effective Java",
+        "author": "Joshua Bloch",
+        "year": 2017,
+        "isbn": "9780134685991",
+        "pages": 416,
+        "description": "Um dos livros mais respeitados sobre boas práticas, padrões e técnicas avançadas de desenvolvimento Java.",
+        "price": 160.00,
+        "quantity": 4,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780134685991-L.jpg"
+      },
+      {
+        "id": 8,
+        "title": "Java Concurrency in Practice",
+        "author": "Brian Goetz",
+        "year": 2006,
+        "isbn": "9780321349606",
+        "pages": 424,
+        "description": "O guia definitivo sobre programação concorrente em Java, essencial para sistemas de alta performance.",
+        "price": 175.00,
+        "quantity": 3,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780321349606-L.jpg"
+      },
+      {
+        "id": 9,
+        "title": "Head First Java",
+        "author": "Kathy Sierra & Bert Bates",
+        "year": 2005,
+        "isbn": "9780596009205",
+        "pages": 720,
+        "description": "Livro altamente visual e didático que introduz os fundamentos da linguagem Java.",
+        "price": 120.00,
+        "quantity": 6,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780596009205-L.jpg"
+      }
+    ],
+    "algoritmos": [
+      {
+        "id": 10,
+        "title": "Introduction to Algorithms",
+        "author": "Cormen, Leiserson, Rivest, Stein",
+        "year": 2009,
+        "isbn": "9780262033848",
+        "pages": 1312,
+        "description": "O famoso 'CLRS', livro mais usado do mundo para estudo profundo de algoritmos e estruturas de dados.",
+        "price": 220.00,
+        "quantity": 2,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780262033848-L.jpg"
+      },
+      {
+        "id": 11,
+        "title": "Grokking Algorithms",
+        "author": "Aditya Bhargava",
+        "year": 2016,
+        "isbn": "9781617292231",
+        "pages": 256,
+        "description": "Uma introdução visual e simples aos principais algoritmos usados na programação moderna.",
+        "price": 95.00,
+        "quantity": 8,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9781617292231-L.jpg"
+      },
+      {
+        "id": 12,
+        "title": "Algorithms",
+        "author": "Robert Sedgewick & Kevin Wayne",
+        "year": 2011,
+        "isbn": "9780321573513",
+        "pages": 976,
+        "description": "Abordagem moderna e prática de algoritmos, com exemplos em Java e excelente profundidade teórica.",
+        "price": 180.00,
+        "quantity": 4,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780321573513-L.jpg"
+      }
+    ],
+    "redes": [
+      {
+        "id": 13,
+        "title": "Computer Networks",
+        "author": "Andrew S. Tanenbaum",
+        "year": 2010,
+        "isbn": "9780132126953",
+        "pages": 960,
+        "description": "O livro clássico e didático usado mundialmente para entender redes de computadores.",
+        "price": 180.00,
+        "quantity": 3,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780132126953-L.jpg"
+      },
+      {
+        "id": 14,
+        "title": "TCP/IP Illustrated, Volume 1",
+        "author": "W. Richard Stevens",
+        "year": 1994,
+        "isbn": "9780201633467",
+        "pages": 592,
+        "description": "Referência completa e profundamente detalhada sobre o protocolo TCP/IP.",
+        "price": 190.00,
+        "quantity": 3,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780201633467-L.jpg"
+      },
+      {
+        "id": 15,
+        "title": "Network Warrior",
+        "author": "Gary A. Donahue",
+        "year": 2007,
+        "isbn": "9780596101732",
+        "pages": 784,
+        "description": "Guia prático voltado para administradores de redes e engenheiros de infraestrutura.",
+        "price": 165.00,
+        "quantity": 4,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780596101732-L.jpg"
+      }
+    ],
+    "sistemas_operacionais": [
+      {
+        "id": 16,
+        "title": "Operating System Concepts",
+        "author": "Silberschatz, Galvin, Gagne",
+        "year": 2018,
+        "isbn": "9781119456339",
+        "pages": 976,
+        "description": "Considerado a bíblia dos sistemas operacionais, cobrindo processos, memória, segurança e muito mais.",
+        "price": 200.00,
+        "quantity": 2,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9781119456339-L.jpg"
+      },
+      {
+        "id": 17,
+        "title": "Modern Operating Systems",
+        "author": "Andrew S. Tanenbaum",
+        "year": 2014,
+        "isbn": "9780133591620",
+        "pages": 1136,
+        "description": "Livro completo sobre conceitos modernos de sistemas operacionais, escrito por um dos maiores professores da área.",
+        "price": 195.00,
+        "quantity": 4,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780133591620-L.jpg"
+      },
+      {
+        "id": 18,
+        "title": "Linux Command Line and Shell Scripting Bible",
+        "author": "Richard Blum",
+        "year": 2021,
+        "isbn": "9781119700937",
+        "pages": 848,
+        "description": "Guia completo para dominar o terminal Linux e escrever scripts poderosos.",
+        "price": 160.00,
+        "quantity": 5,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9781119700937-L.jpg"
+      }
+    ],
+    "engenharia_de_software": [
+      {
+        "id": 19,
+        "title": "Clean Code",
+        "author": "Robert C. Martin",
+        "year": 2008,
+        "isbn": "9780132350884",
+        "pages": 464,
+        "description": "Um dos livros mais influentes sobre escrever código limpo, legível e sustentável.",
+        "price": 120.00,
+        "quantity": 5,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg"
+      },
+      {
+        "id": 20,
+        "title": "Clean Architecture",
+        "author": "Robert C. Martin",
+        "year": 2017,
+        "isbn": "9780134494166",
+        "pages": 432,
+        "description": "Explora princípios de arquitetura de software limpa, modular e desacoplada.",
+        "price": 135.00,
+        "quantity": 4,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780134494166-L.jpg"
+      },
+      {
+        "id": 21,
+        "title": "The Pragmatic Programmer",
+        "author": "Andrew Hunt & David Thomas",
+        "year": 1999,
+        "isbn": "9780135957059",
+        "pages": 352,
+        "description": "Um dos livros mais importantes da história da engenharia de software.",
+        "price": 150.00,
+        "quantity": 6,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg"
+      }
+    ],
+    "bancos_de_dados": [
+      {
+        "id": 22,
+        "title": "SQL for Data Analysis",
+        "author": "Cathy Tanimura",
+        "year": 2021,
+        "isbn": "9781492077466",
+        "pages": 350,
+        "description": "Guia prático para usar SQL como ferramenta poderosa de análise de dados.",
+        "price": 110.00,
+        "quantity": 7,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9781492077466-L.jpg"
+      },
+      {
+        "id": 23,
+        "title": "Learning SQL",
+        "author": "Alan Beaulieu",
+        "year": 2020,
+        "isbn": "9781492057611",
+        "pages": 500,
+        "description": "Introdução sólida e moderna ao SQL, adequada para iniciantes e profissionais.",
+        "price": 105.00,
+        "quantity": 5,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9781492057611-L.jpg"
+      },
+      {
+        "id": 24,
+        "title": "Database System Concepts",
+        "author": "Silberschatz, Korth, Sudarshan",
+        "year": 2010,
+        "isbn": "9780073523323",
+        "pages": 1376,
+        "description": "Uma das referências mais completas sobre sistemas de banco de dados.",
+        "price": 210.00,
+        "quantity": 3,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780073523323-L.jpg"
+      }
+    ],
+    "inteligencia_artificial": [
+      {
+        "id": 25,
+        "title": "Artificial Intelligence: A Modern Approach",
+        "author": "Stuart Russell & Peter Norvig",
+        "year": 2010,
+        "isbn": "9780136042594",
+        "pages": 1152,
+        "description": "O livro mais famoso e completo de IA do mundo.",
+        "price": 230.00,
+        "quantity": 2,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780136042594-L.jpg"
+      },
+      {
+        "id": 26,
+        "title": "Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow",
+        "author": "Aurélien Géron",
+        "year": 2019,
+        "isbn": "9781492032648",
+        "pages": 856,
+        "description": "Abordagem prática de machine learning e deep learning com ferramentas modernas.",
+        "price": 180.00,
+        "quantity": 4,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9781492032648-L.jpg"
+      },
+      {
+        "id": 27,
+        "title": "Deep Learning",
+        "author": "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
+        "year": 2016,
+        "isbn": "9780262035613",
+        "pages": 800,
+        "description": "Referência acadêmica definitiva para Deep Learning.",
+        "price": 250.00,
+        "quantity": 2,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780262035613-L.jpg"
+      }
+    ],
+    "web_design": [
+      {
+        "id": 28,
+        "title": "HTML and CSS: Design and Build Websites",
+        "author": "Jon Duckett",
+        "year": 2011,
+        "isbn": "9781118008188",
+        "pages": 512,
+        "description": "Livro belamente ilustrado que ensina HTML e CSS de forma clara e acessível.",
+        "price": 95.00,
+        "quantity": 8,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9781118008188-L.jpg"
+      },
+      {
+        "id": 29,
+        "title": "JavaScript and JQuery: Interactive Front-End Web Development",
+        "author": "Jon Duckett",
+        "year": 2014,
+        "isbn": "9781118531648",
+        "pages": 640,
+        "description": "Complemento ao livro de HTML/CSS, focado em JavaScript moderno e jQuery.",
+        "price": 115.00,
+        "quantity": 5,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9781118531648-L.jpg"
+      }
+    ],
+    "seguranca": [
+      {
+        "id": 30,
+        "title": "The Web Application Hacker's Handbook",
+        "author": "Dafydd Stuttard & Marcus Pinto",
+        "year": 2011,
+        "isbn": "9780471789118",
+        "pages": 912,
+        "description": "Guia completo sobre técnicas de ataque e defesa em segurança de aplicações web.",
+        "price": 180.00,
+        "quantity": 3,
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780471789118-L.jpg"
+      }
+    ]
+  }
+}
