@@ -1,11 +1,11 @@
 import style from "./Register.module.css";
 import { useState } from "react";
 import type { FormEvent } from "react";
-import { FaUser, FaLock , FaLockOpen } from "react-icons/fa";
+import { FaUser, FaLock, FaLockOpen } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoCalendar } from "react-icons/io5";
-import Button from "../../components/Button.tsx";
-import LinkReturn from "../../components/LinkReturn.tsx";
+import Button from "../../components/Button/Button.tsx";
+import LinkReturn from "../../components/LinkReturn/LinkReturn.tsx";
 import { supabase } from "../../lib/supabaseCliente.ts";
 import { validateEmail } from "../../lib/validateEmail";
 import { validatePassword } from "../../lib/validatePassword";
@@ -176,7 +176,7 @@ function Register() {
         <div className={style.inputBox}>
           <label>Senha:</label>
           <input
-            type={showPassword ? "text" : "password"} 
+            type={showPassword ? "text" : "password"}
             placeholder="Digite sua senha"
             value={password}
             onChange={(e) => {
@@ -185,7 +185,7 @@ function Register() {
               setSuccessMessage("");
             }}
           />
-           <button
+          <button
             type="button"
             className={style.iconButton}
             onClick={() => setShowPassword(!showPassword)}
@@ -205,7 +205,7 @@ function Register() {
         <div className={style.inputBox}>
           <label>Confirmação de Senha:</label>
           <input
-            type={showPassword ? "text" : "password"} 
+            type={showPassword ? "text" : "password"}
             placeholder="Confirme sua senha"
             value={confirmPassword}
             onChange={(e) => {

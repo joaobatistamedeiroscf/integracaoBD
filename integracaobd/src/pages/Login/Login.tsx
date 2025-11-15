@@ -3,7 +3,7 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUser, FaLock, FaLockOpen } from "react-icons/fa";
-import Button from "../../components/Button.tsx";
+import Button from "../../components/Button/Button.tsx";
 import { supabase } from "../../lib/supabaseCliente.ts";
 import { validateEmail } from "../../lib/validateEmail";
 import { validatePassword } from "../../lib/validatePassword";

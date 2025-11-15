@@ -2,8 +2,8 @@ import style from "./Forget.module.css";
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { FaUser } from "react-icons/fa";
-import Button from "../../components/Button.tsx";
-import LinkReturn from "../../components/LinkReturn.tsx";
+import Button from "../../components/Button/Button.tsx";
+import LinkReturn from "../../components/LinkReturn/LinkReturn.tsx";
 import { supabase } from "../../lib/supabaseCliente.ts";
 import { validateEmail } from "../../lib/validateEmail";
 
