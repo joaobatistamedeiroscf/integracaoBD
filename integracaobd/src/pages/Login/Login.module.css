@@ -55,6 +55,22 @@
   left: 90%;
   transform: translateY(-50%);
   color: #eaeaea;
+  font-size: 16px;
+}
+
+.iconButton {
+  position: relative;
+  top: -40%;
+  left: 86%;
+  transform: translateY(-5%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.3s ease;
 }
 
 .forget {
@@ -235,8 +251,16 @@
     font-size: 12px;
   }
 
+  .iconButton {
+  position: relative;
+  top: -40%;
+  left: 84%;
+  transform: translateY(-5%);
+}
+
+
   .inputBox .icon {
-    font-size: 18px;
+    font-size: 16px;
     left: 88%;
   }
 

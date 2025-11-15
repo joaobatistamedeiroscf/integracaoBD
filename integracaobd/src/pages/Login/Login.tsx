@@ -2,7 +2,7 @@ import style from "./Login.module.css";
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaUser, FaLock } from "react-icons/fa";
+import { FaUser, FaLock, FaLockOpen } from "react-icons/fa";
 import Button from "../../components/Button.tsx";
 import { supabase } from "../../lib/supabaseCliente.ts";
 import { validateEmail } from "../../lib/validateEmail";
@@ -14,10 +14,9 @@ function Login() {
   const [mensageEmail, setMensageEmail] = useState<string>("");
   const [mensagePassword, setMensagePassword] = useState<string>("");
   const [successMessage, setSuccessMessage] = useState<string>("");
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const navigate = useNavigate();
-
-  
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -72,11 +71,13 @@ function Login() {
           />
           <FaUser className={style.icon} />
         </div>
-        {mensageEmail && <p className={style.mensagerrorEmail}>{mensageEmail}</p>}
+        {mensageEmail && (
+          <p className={style.mensagerrorEmail}>{mensageEmail}</p>
+        )}
 
         <div className={style.inputBox}>
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="Senha"
             value={password}
             onChange={(e) => {
@@ -85,21 +86,32 @@ function Login() {
               setSuccessMessage("");
             }}
           />
-          <FaLock className={style.icon} />
+          <button
+            type="button"
+            className={style.iconButton}
+            onClick={() => setShowPassword(!showPassword)}
+            title={showPassword ? "Ocultar senha" : "Mostrar senha"}
+          >
+            {showPassword ? (
+              <FaLockOpen className={style.icon} />
+            ) : (
+              <FaLock className={style.icon} />
+            )}
+          </button>
         </div>
-        
-        {mensagePassword && <p className={style.mensagerrorPassword}>{mensagePassword}</p>}
 
-        
-        
+        {mensagePassword && (
+          <p className={style.mensagerrorPassword}>{mensagePassword}</p>
+        )}
+
         {successMessage && (
           <p className={style.mensagsuccess}>{successMessage}</p>
         )}
 
-
-
         <div className={style.forget}>
-          <Link className={style.link} to="/forget">Esqueceu a senha?</Link>
+          <Link className={style.link} to="/forget">
+            Esqueceu a senha?
+          </Link>
         </div>
 
         <Button className={style.button} text="Entrar" />
@@ -107,7 +119,9 @@ function Login() {
         <div className={style.register}>
           <p>
             Não tem uma conta?{" "}
-            <Link className={style.link} to="/register">Cadastre-se</Link>
+            <Link className={style.link} to="/register">
+              Cadastre-se
+            </Link>
           </p>
         </div>
       </form>
