@@ -59,7 +59,23 @@
   left: 87%;
   transform: translateY(-50%);
   top: -20px;
+  font-size: 16px;
   color: #eaeaea;
+}
+.iconButton {
+  position: relative;
+  outline: none;
+  top: -40%;
+  right: 47%;
+  transform: translateY(-5%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.3s ease;
 }
 
 .button {
@@ -146,7 +162,7 @@
   }
 
   .inputBox .icon {
-    left: 85%;
+    left: 90%;
     top: -18px;
     font-size: 16px;
   }
@@ -216,9 +232,9 @@
   }
 
   .inputBox .icon {
-    left: 86%;
+    left: 90%;
     top: -18px;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .button {
@@ -286,7 +302,7 @@
   }
 
   .inputBox .icon {
-    left: 85%;
+    left: 90%;
     top: -16px;
     font-size: 14px;
   }

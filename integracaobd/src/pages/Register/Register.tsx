@@ -1,7 +1,7 @@
 import style from "./Register.module.css";
 import { useState } from "react";
 import type { FormEvent } from "react";
-import { FaUser, FaLock } from "react-icons/fa";
+import { FaUser, FaLock , FaLockOpen } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoCalendar } from "react-icons/io5";
 import Button from "../../components/Button.tsx";
@@ -25,6 +25,7 @@ function Register() {
     useState<string>("");
   const [mensageDate, setMensageDate] = useState<string>("");
   const [successMessage, setSuccessMessage] = useState<string>("");
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -175,8 +176,8 @@ function Register() {
         <div className={style.inputBox}>
           <label>Senha:</label>
           <input
-            type="password"
-            placeholder="Senha"
+            type={showPassword ? "text" : "password"} 
+            placeholder="Digite sua senha"
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
@@ -184,7 +185,18 @@ function Register() {
               setSuccessMessage("");
             }}
           />
-          <FaLock className={style.icon} />
+           <button
+            type="button"
+            className={style.iconButton}
+            onClick={() => setShowPassword(!showPassword)}
+            title={showPassword ? "Ocultar senha" : "Mostrar senha"}
+          >
+            {showPassword ? (
+              <FaLockOpen className={style.icon} />
+            ) : (
+              <FaLock className={style.icon} />
+            )}
+          </button>
         </div>
         {mensagePassword && (
           <p className={style.mensagerrorPassword}>{mensagePassword}</p>
@@ -193,7 +205,7 @@ function Register() {
         <div className={style.inputBox}>
           <label>Confirmação de Senha:</label>
           <input
-            type="password"
+            type={showPassword ? "text" : "password"} 
             placeholder="Confirme sua senha"
             value={confirmPassword}
             onChange={(e) => {
@@ -202,7 +214,18 @@ function Register() {
               setSuccessMessage("");
             }}
           />
-          <FaLock className={style.icon} />
+          <button
+            type="button"
+            className={style.iconButton}
+            onClick={() => setShowPassword(!showPassword)}
+            title={showPassword ? "Ocultar senha" : "Mostrar senha"}
+          >
+            {showPassword ? (
+              <FaLockOpen className={style.icon} />
+            ) : (
+              <FaLock className={style.icon} />
+            )}
+          </button>
         </div>
         {mensageConfirmPassword && (
           <p className={style.mensagerrorPassword}>{mensageConfirmPassword}</p>
