@@ -68,7 +68,7 @@ function Biblioteca() {
         const bookCategory = Object.keys(rawData.books).find((cat) =>
           rawData.books[cat].some((b: Book) => b.id === book.id)
         );
-        return bookCategory === selectedCategory;
+        return bookCategory?.toLowerCase() === selectedCategory.toLowerCase();
       });
     }
 

@@ -10,25 +10,26 @@ function CategoryFilter({
   selectedCategory,
   onCategoryChange,
 }: CategoryFilterProps) {
-  const [categories, setCategories] = useState<string[]>([]);
+  const categoryMapping = {
+    JavaScript: "javascript",
+    Python: "python",
+    Java: "java",
+    Algoritmos: "algoritmos",
+    Redes: "redes",
+    "Sistemas Operacionais": "sistemas_operacionais",
+    "Engenharia de Software": "engenharia_de_software",
+    "Bancos de Dados": "bancos_de_dados",
+    "Inteligência Artificial": "inteligencia_artificial",
+    "Web Design": "web_design",
+    Segurança: "seguranca",
+  };
+
+  const displayCategories = Object.keys(categoryMapping);
+  const [categories, setCategories] = useState<string[]>(displayCategories);
 
   useEffect(() => {
-    fetchCategories();
+    setCategories(displayCategories);
   }, []);
-
-  async function fetchCategories() {
-    try {
-      const response = await fetch("http://localhost:3001/books");
-      if (!response.ok) {
-        throw new Error("Erro ao carregar categorias");
-      }
-      const data = await response.json();
-      const cats = Object.keys(data.books);
-      setCategories(cats);
-    } catch (err) {
-      console.error("Erro ao buscar categorias:", err);
-    }
-  }
 
   return (
     <div className={style.filterContainer}>
@@ -43,8 +44,11 @@ function CategoryFilter({
       >
         <option value="Todas">Todas</option>
         {categories.map((category) => (
-          <option key={category} value={category}>
-            {category.charAt(0).toUpperCase() + category.slice(1)}
+          <option
+            key={category}
+            value={categoryMapping[category as keyof typeof categoryMapping]}
+          >
+            {category}
           </option>
         ))}
       </select>
