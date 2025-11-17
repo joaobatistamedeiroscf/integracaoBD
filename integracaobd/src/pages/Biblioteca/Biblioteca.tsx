@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import LinkReturn from "../../components/LinkReturn/LinkReturn.tsx";
 import SearchBar from "../../components/SearchBar/SearchBar.tsx";
 import CategoryFilter from "../../components/CategoryFilter/CategoryFilter.tsx";
+import { BiCode , BiCodeAlt } from "react-icons/bi";
 
 interface Book {
   id: number;
@@ -96,8 +97,12 @@ function Biblioteca() {
     <div className={style.wrapper}>
       <LinkReturn />
       <div className={style.container}>
-        <h1 className={style.title}>Bem-vindo à Biblioteca do Programador !</h1>
-
+        <div className={style.titleContainer}>
+          <BiCode size={40} color="#4A90E2" />
+          <h1 className={style.title}>Bem-vindo à Biblioteca do Programador !</h1>
+          <BiCodeAlt size={40} color="#4A90E2" />
+        </div>
+        
         {/* Barra de busca e filtros */}
         <div className={style.controlsContainer}>
           <SearchBar
