@@ -465,6 +465,27 @@
   transform: scale(1.05);
 }
 
+.increaseBtn {
+  background: linear-gradient(135deg, #4db8aa 0%, #3a9c91 100%);
+  color: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.increaseBtn:hover {
+  background: linear-gradient(135deg, #5ccfc2 0%, #46b5a4 100%);
+  transform: scale(1.05);
+}
+
 .removeBtn {
   background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
   color: #fff;

@@ -127,9 +127,10 @@ function Biblioteca() {
       const newCart = new Map(prevCart);
       if (newCart.has(book.id)) {
         const cartItem = newCart.get(book.id)!;
-        cartItem.quantidade += 1;
+        const updatedQuantity = cartItem.quantidade + 1;
+        newCart.set(book.id, { ...cartItem, quantidade: updatedQuantity });
         setToast({
-          message: `Quantidade aumentada para ${cartItem.quantidade}`,
+          message: `Quantidade aumentada para ${updatedQuantity}`,
           bookTitle: book.title,
         });
       } else {
@@ -155,10 +156,28 @@ function Biblioteca() {
       const cartItem = newCart.get(bookId);
       if (cartItem) {
         if (cartItem.quantidade > 1) {
-          cartItem.quantidade -= 1;
+          newCart.set(bookId, {
+            ...cartItem,
+            quantidade: cartItem.quantidade - 1,
+          });
         } else {
           newCart.delete(bookId);
         }
+      }
+      return newCart;
+    });
+  };
+
+  // Incrementar quantidade no carrinho
+  const increaseQuantity = (bookId: number) => {
+    setCart((prevCart) => {
+      const newCart = new Map(prevCart);
+      const cartItem = newCart.get(bookId);
+      if (cartItem) {
+        newCart.set(bookId, {
+          ...cartItem,
+          quantidade: cartItem.quantidade + 1,
+        });
       }
       return newCart;
     });
@@ -359,6 +378,13 @@ function Biblioteca() {
                           title="Diminuir quantidade"
                         >
                           −
+                        </button>
+                        <button
+                          className={style.increaseBtn}
+                          onClick={() => increaseQuantity(item.id)}
+                          title="Aumentar quantidade"
+                        >
+                          +
                         </button>
                         <button
                           className={style.removeBtn}
